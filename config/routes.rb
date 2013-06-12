@@ -10,7 +10,7 @@ match "/auth/:provider/callback" => "session#twitter"
   post 'user/create' => 'user#create' , :as => :sign_up_create
 
   get "login/new"
-  post 'login/create' => 'login#create', :as => :login_create1
+  post 'login/create' => 'login#create', :as => :login_create
   post "product/create" => "product#create"
   get "user_wish/:id" =>  "login#user_wish"
   get "edit/:id" => "product#edit"

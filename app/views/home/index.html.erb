@@ -129,7 +129,7 @@ $('exampleIXc').addEvent('change', dateIXchange);
 
                <div class="group" id="loginform" style="display: block">
 
-<%=form_for @user, :as => :user, :url => login_create1_path, :html => {:multipart => true,  :id => "loginform", :onSubmit=>"return validate_form_fields(this);",:name=>"login"}, :method => "post" do |f|  %>
+<%=form_for @user, :as => :user, :url => login_create_path, :html => {:multipart => true,  :id => "loginform", :onSubmit=>"return validate_form_fields(this);",:name=>"login"}, :method => "post" do |f|  %>
 
                 <label>Email</label><%= f.text_field :email  %> <br/><br/><br/>
                 <span id="email" style="color:#ee0000;"></span>

@@ -52,23 +52,6 @@
                 <!--    <li><a href="#">About Us</a></li>-->
                     <li><a href="#"><%= t :Contact%> watet.com</a></li>
                     <li class="last"><%#= link_to 'contect us', {:action => 'contact_us', :controller => "products"} %></li>
-                    <li><div id="fb-root"></div>
-<fb:like href="/" send="" width="100" layout="button_count" action="fb-like"></fb:like>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({appId: '107947262715393', status: true, cookie: true, xfbml: true});
-  };
-  (function() {
-    // delay to simulate slow loading of Facebook library - remove this setTimeout!!
-    var t = setTimeout(function() {
-        var e = document.createElement('script'); e.async = true;
-        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        document.getElementById('fb-root').appendChild(e);
-        }, 3000);
-  }());
-
-</script></li>
-
                 </ul>
                 <p>&<%= t :copy %>2011-2012 watet.com. <%= t :All_rights_reserved %></p>
             </div>
