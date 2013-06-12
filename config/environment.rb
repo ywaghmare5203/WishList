@@ -3,7 +3,7 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 Weliike::Application.initialize!
-$URL = "http://192.168.1.84:3005"
+$URL = "http://secure-headland-8421.herokuapp.com/"
 
 $USER_NAME = "yogesh.waghmare@techvalens.com"
 $PASSWORD = "yogeshwaghmare1432"
