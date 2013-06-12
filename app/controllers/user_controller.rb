@@ -8,7 +8,7 @@ class UserController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html {redirect_to root_url}
+        format.html {redirect_to :action => "index", :controller => "home"}
         flash[:notice] = "Successfully Registerd..."
         format.json {render :json => @user}
       end
