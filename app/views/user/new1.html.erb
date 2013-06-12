@@ -1,0 +1,80 @@
+
+<script type="text/javascript">
+  var calendarIX = new CalendarEightysix('exampleIXb', { 'linkWithInput': false, 'defaultDate': '1/1/2010', 'minDate': '1/1/2010', 'maxDate': '12/31/2014', 'format': '%d', 'toggler': 'exampleIX-picker', 'offsetX': 76 });
+calendarIX.addEvent('change', function(date) {
+    $('exampleIXa').set('value', date.get('month') + 1);
+    $('exampleIXc').set('value', date.get('year'));
+});
+var dateIXchange = function() {
+    //Get the current date
+    var date = calendarIX.getDate();
+    //Set the variables from the input and select elements
+    date.set('month', $('exampleIXa').get('value') - 1);
+    date.set('date', $('exampleIXb').get('value'));
+    date.set('year', $('exampleIXc').get('value'));
+    //Set the new date
+    calendarIX.setDate(date);
+}
+$('exampleIXa').addEvent('change', dateIXchange);
+$('exampleIXb').addEvent('change', dateIXchange);
+$('exampleIXc').addEvent('change', dateIXchange);
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+                $("#date").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: 'images/icon_cal.png' });
+        });
+    </script>
+
+ <div class="adminsales">
+   <h3>Registration Hear</h3>
+    <div id="add-deal-location" style="display: block">
+      <span class="bus_back"></span>
+
+      <div class="group">
+<%= form_for @user , :as => :user, :url => sign_up_create_path, :id=>"signupform", :class=>"group",:html => {:multipart => true}, :method => "post" do |f| %>
+
+
+
+<%= f.text_field :first_name, :class => "bot" , :placeholder => "First Name" %><br/>
+
+
+
+<%= f.text_field :last_name, :class => "bot" , :placeholder => "Last Name" %><br/>
+
+
+
+<%= f.email_field :email, :class => "bot" , :placeholder => "Email" %><br/>
+
+
+
+ <%= f.text_field :birthday, :id=>"date" , :class => "bot" , :placeholder => "Enter Date of Birth" %><br/>
+
+
+<%= f.password_field :password, :class => "bot" , :placeholder => "Password" %><br/>
+
+
+
+<%= f.password_field :confirm_password, :class => "bot" , :placeholder => "Password Confirmation" %> <br/>
+
+
+
+<%= f.text_field :gender, :class => "bot" , :placeholder => "Gender" %><br/>
+
+
+
+<%= f.text_field :nationality, :class => "bot" , :placeholder => "Nationality" %><br/>
+<%= f.file_field :profile_picture %><br/>
+
+
+      <div class="actions">
+         <%= f.submit "Sign-Up"%>
+      </div>
+
+
+<% end %>
+      </div>
+    </div>
+ </div>

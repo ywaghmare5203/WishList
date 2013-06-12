@@ -1,0 +1,164 @@
+<%#*<script type="text/javascript">%>
+<%#*function validate_form_fields(id){%>
+<%#*var user_email=document.getElementById('user_email').value;%>
+
+<%#*document.getElementById("email").innerHTML=" ";%>
+
+<%#*var msg='false';%>
+<%#*// ###### Script for Zip code%>
+<%#*if(user_email==''){%>
+<%#*msg='true';%>
+<%#*document.getElementById("email").innerHTML="Enter Email Address";%>
+<%#*document.getElementById("user_email").focus();%>
+<%#*}%>
+<%#*else{%>
+<%#*var filter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i;%>
+<%#*if (filter.test(user_email)== false) {%>
+<%#*msg ='true';%>
+<%#*document.getElementById("email").innerHTML="Enter Valid Email";%>
+<%#*document.getElementById("user_email").focus();%>
+<%#*}%>
+<%#*}%>
+<%#*if(user_password==''){%>
+<%#*msg='true';%>
+<%#*document.getElementById("email").innerHTML="Enter Email Address";%>
+<%#*document.getElementById("user_password").focus();%>
+<%#*}%>
+
+<%#*if(msg=='false')%>
+<%#*return true;%>
+<%#*else%>
+<%#*return false;%>
+
+
+<%#*}%>
+<%#*</script>%>
+
+
+
+<script>
+  var calendarIX = new CalendarEightysix('exampleIXb', { 'linkWithInput': false, 'defaultDate': '1/1/2010', 'minDate': '1/1/2010', 'maxDate': '12/31/2014', 'format': '%d', 'toggler': 'exampleIX-picker', 'offsetX': 76 });
+calendarIX.addEvent('change', function(date) {
+    $('exampleIXa').set('value', date.get('month') + 1);
+    $('exampleIXc').set('value', date.get('year'));
+});
+var dateIXchange = function() {
+    //Get the current date
+    var date = calendarIX.getDate();
+    //Set the variables from the input and select elements
+    date.set('month', $('exampleIXa').get('value') - 1);
+    date.set('date', $('exampleIXb').get('value'));
+    date.set('year', $('exampleIXc').get('value'));
+    //Set the new date
+    calendarIX.setDate(date);
+}
+$('exampleIXa').addEvent('change', dateIXchange);
+$('exampleIXb').addEvent('change', dateIXchange);
+$('exampleIXc').addEvent('change', dateIXchange);
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+                $("#date").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: 'images/icon_cal.png' });
+        });
+    </script>
+
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/ui.all.css" type="text/css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="js/interaction.js"></script>
+
+	<div class="loginbanner" id="log_ban">
+    	<div class="content">
+       <h2 class="slogan" style="margin-top: 66px; left: -422px; right: 84px;">
+        	<span>… Delivering Wishes...</span>
+
+
+        </h2>
+
+
+<div class="memberlogin group" style="width: 329px;">
+            	<p>Members Login</p>
+                 <input type="text" value="email" rel="email"><br />
+                 <div class="clear"></div>
+                 <input type="password" value="password" rel="password"><br />
+                 <div class="group" >
+                 <button class="login">Login</button><b class="toggle"><a href="#" id="forgotpassword">forgot password?</a></b>
+                 <a href="#" class="signup" id="signup">Sign up</a>
+
+                 </div>
+                 <p class="msg">email has been sent</p>
+                  <div class="forgotpasswordbox clear">
+                 	 <div class="minimize"></div>
+                        <p class="notify">Please enter your email address below. We will send you an email to confirm your password.</p>
+
+                        <div class="clear"></div>
+                        <input type="text" value="email" rel="email"><br />
+                        <button id="submit">Submit</button>
+				 </div>
+
+            </div>
+
+
+        </div>
+	</div><!-- login banner ends-->
+
+   <div id="popup_holder">
+
+   </div><!-- popup holder ends -->
+
+   <div id="form">
+        	<div class="holder">
+            	<div class="close"></div>
+                	<div class="mealsholder">
+                      <div class="mealdetails group">
+                    </div>
+                  </div><!--meals holder ends-->
+
+
+               <div class="group" id="loginform" style="display: block">
+
+<%=form_for @user, :as => :user, :url => login_create_path, :html => {:multipart => true,  :id => "loginform", :onSubmit=>"return validate_form_fields(this);",:name=>"login"}, :method => "post" do |f|  %>
+
+                <label>Email</label><%= f.text_field :email  %> <br/><br/><br/>
+                <span id="email" style="color:#ee0000;"></span>
+                <label>Password</label><%= f.text_field :password  %><br/>
+                <span id="password" style="color:#ee0000;"></span>
+                <div class="actions"> <%= f.submit :Login, :class => "login"  %></div>
+
+
+<% end %>
+               </div>
+
+               <%=form_for @user, :as => :user, :url => sign_up_create_path, :html => {:multipart => true ,:class=>"group" ,:id=>"signupform"}, :method => "post" do |f|  %>
+                     <p>New user?</p>
+<label>First Name:</label> <%= f.text_field :first_name  %><br/>
+
+<label>Last Name:</label> <%= f.text_field :last_name  %><br/>
+
+<label>Email:</label> <%= f.email_field :email  %><br/>
+<div class="field">
+  <label>Date of Birth:</label> <%= f.text_field :birthday ,:id=>"date" %></div><br/>
+
+<label>Gender:</label> <%= f.text_field :gender  %><br/>
+
+<label>Nationality:</label> <%= f.text_field :country  %><br/>
+
+<label>Password:</label> <%= f.password_field :password  %><br/>
+
+<label>Confirm Password:</label> <%= f.password_field :password_confirmation%><br/>
+<div class="actions"%>
+<%= f.submit :Sign_up ,  :id => "signup"%>
+                </div>
+
+<% end %>
+
+
+            </div><!-- holder ends -->
+
+        </div><!--form ends-->
+
