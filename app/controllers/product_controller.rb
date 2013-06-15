@@ -22,7 +22,8 @@ class ProductController < ApplicationController
     userss = {}
     @user = User.find(params[:id])
     @product_list = Product.find_by_user_id(@user.id)
-      us = userss.merge(:first_name => @user.first_name, :last_name => @user.last_name, :user_id => @user.id, :product_name => @product_list.name, :product_id => @product_list.id, :email => params[:sender][:email], :product_image => @product_list.photos)
+    if @product_list.present?
+       us = userss.merge(:first_name => @user.first_name, :last_name => @user.last_name, :user_id => @user.id, :product_name => @product_list.name, :product_id => @product_list.id, :email => params[:sender][:email], :product_image => @product_list.photos)
       @userss << us
     ListMailer.share_list_email(us).deliver #proper name conventions
     flash[:notice] = "Email is succesfully send"
@@ -30,6 +31,17 @@ class ProductController < ApplicationController
       format.html { redirect_to welcome_path(@user.id)}
       format.json { head :no_content }
     end
+    else
+       us = userss.merge(:first_name => @user.first_name, :last_name => @user.last_name, :user_id => @user.id, :email => params[:sender][:email])
+      @userss << us
+    ListMailer.share_list_email(us).deliver #proper name conventions
+    flash[:notice] = "Email is succesfully send"
+    respond_to do |format|
+      format.html { redirect_to welcome_path(@user.id)}
+      format.json { head :no_content }
+    end
+    end
+     
   end
 
   def edit
