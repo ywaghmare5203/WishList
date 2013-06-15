@@ -1,7 +1,7 @@
 require 'openid/store/filesystem'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-	provider :facebook, '534249429976085', '3ca06c8ddb6672b22123d669443d4be3'
+	provider :facebook, '131672133640955', '3a3c2cbb5a7eda43d07573819a5f841f'
 	provider :openid, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
 
   provider :twitter, 'QO4K9h7zQGN54AYyWMIbQ', 'uwySg97Z5vhWyxvEB4MXok663jGolymTAfGqave6M'
