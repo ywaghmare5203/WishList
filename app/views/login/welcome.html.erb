@@ -1,5 +1,5 @@
 <%#*<h3>Welcome <%= @user.first_name %> <%#= @user.last_name %>
-
+ 
 <script type="text/javascript">
   function confirmValidate(){
 var Check = confirm("Are you sure you want to delete this?");
@@ -148,21 +148,8 @@ return false;
 });
 </script>
 
-
-<p style="text-align:right"><%= @user.first_name %><%= @user.last_name %><%= link_to "Sign out", :signout %></p>
 <div class="adminsales">
-  <span class="bus_back1">
-    <a id="signup" class="signup" href="#">Sign up</a>
-  <form action="#" method="get">
-<select name="locale" onchange="this.form.submit()">
-    <option>Select Language</option>
-    <option  value="en"  <%= (@user.locale=='en')?'selected="selected"':''%>>English</option>
-    <option  value="rs" <%= (@user.locale=='rs')?'selected="selected"':''%>>Russian</option>
-    <option  value="fn" <%= (@user.locale=='fn')?'selected="selected"':''%>>Finnish</option>
-    <option  value="sd" <%= (@user.locale=='sd')?'selected="selected"':''%>>Swedish</option>
-    <option  value="pl" <%= (@user.locale=='pl')?'selected="selected"':''%>>Polish</option>
-   </select>
-</form></span> <br/>
+ 
   <div id="add-deal-location" style="display: block" >
       <div style="color:#ee0000;"><%= flash[:notice] %></div>
 

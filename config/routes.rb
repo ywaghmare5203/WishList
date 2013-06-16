@@ -8,6 +8,7 @@ match "/auth/:provider/callback" => "session#twitter"
   #match "/users/:user/products/send" => "products#send", :via => :post
 	get 'user/new' => 'user#new' ,:as => :sign_up
   post 'user/create' => 'user#create' , :as => :sign_up_create
+  get 'user/profile/:id' => 'user#profile', :as => :profile
 
   get "login/new"
   post 'login/create' => 'login#create', :as => :login_create

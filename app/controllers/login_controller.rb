@@ -6,8 +6,15 @@ class LoginController < ApplicationController
   def create
     user = User.authenticate(params[:user][:email], params[:user][:password])
     if user
+      if user.terms == "0"
        session[:user_id] = user.id
-       redirect_to :action => "welcome", :controller => "login", :id => user.id
+       @users = user.update_attributes(:terms => "1")
+       @users.save
+        redirect_to terms_path(session[:user_id])
+      else
+         session[:user_id] = user.id
+         redirect_to :action => "welcome", :controller => "login", :id => user.id
+      end
     else
       flash.now.alert = "Invalid email or password"
       render "new"
