@@ -21,6 +21,16 @@ class LoginController < ApplicationController
     end
   end
 
+  def profile
+    @users = User.find(params[:id])
+    render :layout => "user"
+  end
+
+  def edit_profile
+    @edit_profile = User.find(params[:id])
+    render :layout => "user"
+    puts"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{@edit_profile.inspect}"
+  end
 
 
   def welcome
@@ -33,6 +43,8 @@ class LoginController < ApplicationController
             fb_friends = ActiveSupport::JSON.decode(open(URI.encode("https://graph.facebook.com/me/friends?access_token=#{session['fb_token']}")))['data']
             @friends = fb_friends.collect { |f| User.find_by_provider_and_facebook_id('facebook', f['id']) }.compact
         end
+
+    @wishlist_friend = User.where(:all, :conditions => { :id =>  :id != params[:id] })
       respond_to do |format|
       	format.html {render :layout => "user"}
         format.json { render :json => [@user, @friends] }

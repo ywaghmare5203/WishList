@@ -8,8 +8,11 @@ match "/auth/:provider/callback" => "session#twitter"
   #match "/users/:user/products/send" => "products#send", :via => :post
 	get 'user/new' => 'user#new' ,:as => :sign_up
   post 'user/create' => 'user#create' , :as => :sign_up_create
-  get 'user/profile/:id' => 'user#profile', :as => :profile
-
+  match 'login/profile/:id' => 'login#profile', :as => :profile
+  get 'login/edit_profile/:id' => 'login#edit_profile', :as => :edit_profile
+  post '/update_user' => 'login#update_user' , :as => :update_user
+  post 'change_password' => 'user#change_password' , :as => :change_password
+  post 'deactivate_user' => 'user#deactivate_user' , :as => :deactivate
   get "login/new"
   post 'login/create' => 'login#create', :as => :login_create
   post "product/create" => "product#create"

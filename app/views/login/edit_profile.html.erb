@@ -1,0 +1,92 @@
+
+
+    <div class="content">
+    	<b class="back"><a href="" class="icons">back to todays deals</a></b>
+     </div>
+
+ 	<div class="profile">
+    	<div class="content">
+        	<h2>My Profile</h2>
+            <div class="xbox" >
+              <%= form_for @edit_profile, :as =>:update, :url => update_user_path, :id => @edit_profile.id,:html => {:multipart => "true"} ,:method => "post"  do |f|%>
+              <label>First Name</label>
+              <%=f.text_field :first_name%>
+              <div class="clear"></div>
+              <label>Last Name</label>
+              <%=f.text_field :last_name%>
+              <div class="clear"></div>
+              <label>Gender</label>
+              <%=f.text_field :gender%>
+              <%=  f.hidden_field :update, :value=>@edit_profile.id  , :name=> "update"%>
+              <div class="clear"></div>
+              <label>Date of Birth</label>
+              <%=f.text_field :birthday%>
+              <div class="clear"></div>
+              <label>Upload Your Profile Picture</label>
+              <div class="file">
+              <%=f.file_field :profile_picture%>
+              </div>
+              <div class="clear"></div>
+              <label>Address</label>
+              <%=f.text_field :address%>
+              <div class="clear"></div>
+              <label>City</label>
+              <%=f.text_field :city%>
+              <div class="clear"></div>
+              <label>Nationality</label>
+              <%=f.text_field :nationality%>
+              <div class="clear"></div>
+              <div class="actions">
+              <%= f.submit :Update  %>
+              </div>
+
+
+
+
+              <% end %>
+            </div>
+
+
+
+       
+              
+<div class="xbox">
+                 <p class="caption">Change Account Password</p>
+                 <%= form_for @user_password , :as => :password, :url => change_password_path, :id => @edit_profile.id,:method => "post" do |f|%>
+                 <label>Enter Your Old Password</label>
+                    <%= f.password_field :password %>
+                 <div class="clear"></div>
+                 <label>Enter New Password</label>
+                    <%= f.password_field :password %>
+                  <%=  f.hidden_field :change, :value=>@edit_profile.id  , :name=> "change"%>
+                 <div class="clear"></div>
+                 <label>Re-enter Password</label>
+                    <%= f.password_field :password %>
+                 <div class="clear"></div>
+                 <div class="actions">
+                   <%= f.submit "Change Password" %>
+                 </div>
+
+                 <% end %>
+             </div><!--xbox ends-->
+
+
+               <div class="xbox">
+                 <p class="caption">De-activate</p>
+                   <%= form_for @deactivate , :as => :password, :url => deactivate_path, :id => @edit_profile.id,:method => "post" do |f|%>
+                  <%=  f.hidden_field :change, :value=>@edit_profile.id  , :name=> "change"%>
+                 <div class="actions">
+                 <%= f.submit "De-activate my Account" %>
+                 </div>
+                 <% end %>
+             </div><!--xbox ends-->
+        </div>
+    </div><!-- profile ends -->
+
+      <div id="popup_holder">
+
+    </div><!-- popup holder ends -->
+
+
+
+        <div class="pusher"></div>

@@ -1,80 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iWannaEat.com - Home</title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="js/interaction.js"></script>
+ <!-- twitter Social Button Tracking -->
 
-<script type="text/javascript">
-  var calendarIX = new CalendarEightysix('exampleIXb', { 'linkWithInput': false, 'defaultDate': '1/1/2010', 'minDate': '1/1/2010', 'maxDate': '12/31/2014', 'format': '%d', 'toggler': 'exampleIX-picker', 'offsetX': 76 });
-calendarIX.addEvent('change', function(date) {
-    $('exampleIXa').set('value', date.get('month') + 1);
-    $('exampleIXc').set('value', date.get('year'));
-});
-var dateIXchange = function() {
-    //Get the current date
-    var date = calendarIX.getDate();
-    //Set the variables from the input and select elements
-    date.set('month', $('exampleIXa').get('value') - 1);
-    date.set('date', $('exampleIXb').get('value'));
-    date.set('year', $('exampleIXc').get('value'));
-    //Set the new date
-    calendarIX.setDate(date);
-}
-$('exampleIXa').addEvent('change', dateIXchange);
-$('exampleIXb').addEvent('change', dateIXchange);
-$('exampleIXc').addEvent('change', dateIXchange);
-</script>
+</head>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-                $("#date").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: 'images/icon_cal.png' });
-        });
-    </script>
-
- <div class="adminsales">
-   <h3>Registration Hear</h3>
-    <div id="add-deal-location" style="display: block">
-      <span class="bus_back"></span>
-
-      <div class="group">
-<%= form_for @user , :as => :user, :url => sign_up_create_path, :id=>"signupform", :class=>"group",:html => {:multipart => true}, :method => "post" do |f| %>
-
+<body>
+<div id="wrapper">
+	<div id="header">
+    	<div class="group content">
+            <h1 class="logo logo_bus">
+            	<a href="index.html"></a>
+            </h1>
+            <div class="header_info">
+                <p class="activity friends"><a href="#" class="icons">Invite Friends</a></p>
+                <p class="activity mobapp"><a href="#" class="icons">Mobile App</a></p>
+                <!-- <span id="signup">Sign up</span>-->
+                <!--<p class="login"><a href="#" class="icons" id="login">Login</a></p>-->
+                <!--<div class="activity loggedinfo"><b>anish tripathi</b><span class="caret"></span>
+                	<div class="loglist">
+                    	<div class="holder">
+                        <div class="arrowup"></div>
+                            <ul>
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="profile.html">Profile</a></li>
+                                <li><a href="profile.html">Profile</a></li>
+                            </ul>
+                         </div>
+                     </div>
 
 
-<%= f.text_field :first_name, :class => "bot" , :placeholder => "First Name" %><br/>
+                </div>-->
+           </div>
+        </div>
+    </div><!-- header ends-->
+
+
+    <div class="content">
+    	<div class="business_form group">
+				 <h3>Restaurant Owners</h3>
+                 <form class="group" id="signupform"  action="success_business.html">
+                   <p>Sign up for an account and start uploading deals right away!</p>
+                   <p class="warning">Fields marked with * are mandatory</p>
+                   <label>Basic information *</label><input type="text" placeholder="Your Name" class="bot"><select class="lft"><option>Restaurant Owner</option></select>
+                    <div class="clear"></div>
+                    <label>Email Address *</label><input type="text" placeholder="Email Address" class="bot">
+                    <div class="clear"></div>
+                    <label>Location Information</label><input type="text" placeholder="Restaurant Name" class="bot">
+                    <div class="clear"></div>
+                    <input type="text" placeholder="Address Line 1" class="bot">
+                    <div class="clear"></div>
+                    <input type="text" placeholder="Address Line 2" class="bot"><input type="text" placeholder="Zip Code" class="bot lft mini">
+                    <div class="clear"></div>
+                    <input type="text" placeholder="*Phone number" class="bot"><input type="text" placeholder="Your Website" class="bot lft">
+
+
+                    <div class="clear"></div>
+
+                    <label class="ext-top">Delivery Information </label><input type="text" placeholder="Your Name" class="bot"><select class="lft"><option># of delivery staff</option><option>1</option><option>2</option></select><div class="clear"></div>
+                    <label>Can you create a combo meal for us?</label>
+                    <div class="clear"></div>
+
+                        <div class="option"><input type="radio" name="comboyes" value="Cash on Delivery" class="radio"/><span> yes</span></div>
+                        <div class="option"><input type="radio" name="combono" value="Redeem Points" class="radio"/><span> no</span></div>
+
+                    <div class="clear"></div>
+
+
+                   <select><option># of orders a day</option><option>1</option><option>2</option></select><select class="lft"><option>Primary Cusine</option><option>1</option><option>2</option></select>
+
+                    <div class="clear"></div>
+                    <button id="signup-b">Sign up</button><a href="#">cancel</a>
+
+                <div class="group">
+                	<h3 style="padding-top:25px;">Existing restaurant owners Signup here</h3>
+                  <div class="memberlogin group">
+                    <p>Members Login</p>
+                     <input type="text" value="email" rel="email"><br>
+                     <div class="clear"></div>
+                     <input type="password" value="password" rel="password"><br>
+                     <div class="group">
+                     <button class="login">Login</button><b class="toggle"></b>
+
+
+                     </div>
+                     <p class="msg">email has been sent</p>
+
+                 </div><!-- memberlogin ends-->
+
+            </div><!-- grou ends-->
 
 
 
-<%= f.text_field :last_name, :class => "bot" , :placeholder => "Last Name" %><br/>
+                </form>
+                <div class="benefits">
+
+                    <h4>Benefits of signing up</h4>
+                    <ul>
+                    	<li>lorem ipsum lorem ipsum </li>
+                        <li>lorem ipsum lorem ipsum </li>
+                        <li>lorem ipsum lorem ipsum </li>
+                        <li>lorem ipsum lorem ipsum </li>
+                        <li>lorem ipsum lorem ipsum </li>
+                        <li>lorem ipsum lorem ipsum </li>
+                        <li>lorem ipsum lorem ipsum </li>
+                    </ul>
+                </div>
 
 
 
-<%= f.email_field :email, :class => "bot" , :placeholder => "Email" %><br/>
 
 
 
- <%= f.text_field :birthday, :id=>"date" , :class => "bot" , :placeholder => "Enter Date of Birth" %><br/>
+        </div><!-- bisiness_signup ends-->
 
-
-<%= f.password_field :password, :class => "bot" , :placeholder => "Password" %><br/>
-
-
-
-<%= f.password_field :confirm_password, :class => "bot" , :placeholder => "Password Confirmation" %> <br/>
-
-
-
-<%= f.text_field :gender, :class => "bot" , :placeholder => "Gender" %><br/>
-
-
-
-<%= f.text_field :nationality, :class => "bot" , :placeholder => "Nationality" %><br/>
-<%= f.file_field :profile_picture %><br/>
-
-
-      <div class="actions">
-         <%= f.submit "Sign-Up"%>
-      </div>
-
-
-<% end %>
-      </div>
     </div>
- </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div id="popup_holder">
+
+    </div><!-- popup holder ends -->
+
+
+    	<div id="form">
+        	<div class="holder">
+            	<div class="close"></div>
+                	<div class="mealsholder">
+                      <div class="mealdetails group">
+                        <p class="mealname">Sliders for Game Day: Brisket Short Rib and Classic</p>
+                         <div class="buy cost group">
+                            <div class="box">
+                                <p></p>
+                                <p>AED 10</p>
+                            </div>
+
+                            <div class="box">
+                                <p class="label">Quantity</p>
+                                <select><option>2</option></select>
+                            </div>
+
+                            <div class="box">
+                                <p class="label">Total</p>
+                                <p>AED 20</p>
+                            </div>
+                        </div><!-- buy cost ends-->
+                    </div>
+                  </div><!--meals holder ends-->
+
+                  <div class="memberpoint">
+                  	<div class="earned">
+                    	<p>You've earned</p>
+                        <p class="pointsearned">50</p>
+                        <p>Points with this meal</p>
+                        <p class="msg">Sign up to place your order</p>
+                    </div>
+                    <p>Already a Member? <b id="log"><a href="#">Login</a></b></p>
+                  </div>
+
+                  <p class="yo">Your order</p>
+
+                <img src="images/logo.jpg" />
+
+
+
+                <form class="group" id="loginform">
+                    <label>Login</label>
+                    <div class="clear"></div>
+                    <input type="text" value="email" rel="email"><br />
+                    <div class="clear"></div>
+                    <input type="password" value="password" rel="password"><br />
+                    <div class="clear"></div>
+                    <button class="login">Login</button><b class="toggle"><a href="#" id="forgotpassword">forgot password</a></b>
+
+                    <div class="forgotpasswordbox">
+                        <p class="notify">Please enter your email address below. We will send you an email to confirm your password.</p>
+                        <label>Email</label>
+                        <div class="clear"></div>
+                        <input type="text" value="email" rel="email"><br />
+                        <button id="submit">Submit</button>
+					</div>
+                </form>
+
+                 <form class="group" id="signupform">
+                 <p>New user?</p>
+                   <label>Email:</label><input type="text" ><br />
+                    <div class="clear"></div>
+                    <label>Password:</label><input type="password" ><br />
+                    <div class="clear"></div>
+                    <label>Confirm Password:</label><input type="password" ><br />
+                    <div class="clear"></div>
+                     <label>Street:</label><input type="text" ><br />
+                    <div class="clear"></div>
+                    <label>ZIP:</label><input type="text" ><br />
+                    <div class="clear"></div>
+                    <label>Phone Number:</label><input type="text" ><br />
+                    <div class="clear"></div>
+                    <button id="signup">Sign up</button>
+                </form>
+            </div><!-- holder ends -->
+
+        </div><!--form ends-->
+
+        <div class="pusher"></div>
+
+</div>
+
+
+    <div id="footer">
+    	<div class="content group">
+        	<!--<div class="social group">
+            	<span class="icons fb">
+                	<a href="#"></a>
+                </span>
+                <span class="icons tw">
+                	<a href="#"></a>
+                </span>
+            </div>-->
+            <div class="footerlist group">
+                <ul class="group bus">
+                <!--    <li><a href="#">For Restaurant owners</a></li>
+                    <li><a href="#">For Mobile</a></li>
+                    <li><a href="#">About Us</a></li>-->
+                    <!-- <li><a href="#">Press</a></li>-->
+                 <!--   <li><a href="#">Careers</a></li>-->
+                  	<li><a href="#">Contact iWannaEat.com</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li class="last"><a href="#">Terms</a></li>
+                </ul>
+                <p>&copy2011-2012 iWannaEat.com. All rights reserved</p>
+            </div>
+        </div>
+    </div><!-- footer ends -->
+</body>
+</html>

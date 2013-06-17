@@ -1,0 +1,43 @@
+
+
+    <div class="content">
+    	<b class="back"><a href="todaysdeal.html" class="icons">back to todays deals</a></b>
+     </div>
+
+ 	<div class="profile">
+    	<div class="content">
+        	<h2>My Profile</h2>
+            <div class="xbox" >
+
+                <p class="caption first">Personal Information<%= link_to "Edit" , edit_profile_path(@users.id)%></p>
+
+                <form> 
+                  <% if @users.profile_picture.nil? %>
+                    <div class="band group"><label></label><img src="/images/edit.jpg" class="e-mail"><span id="uname" class="fr"><%=image_tag @users.profile_picture.url%></span></div>
+                  <% else %>
+                   <div class="band group"><label></label><img src="/images/edit.jpg" class="e-mail"><span id="uname" class="fr"><img src="/images/missing.png" height="100" width="100"></img></span></div>
+                  <% end %>
+                    <div class="band group"><label>First Name</label><span id="uname" class="fr"><%= @users.first_name %></span></div>
+                     <div class="band group"><label>Last Name</label><span id="uname" class="fr"><%= @users.last_name %></span></div>
+                      <div class="band group"><label>Email</label>><span id="uname" class="fr"><%= @users.email %></span></div>
+                       <div class="band group"><label>Login With</label><span id="uname" class="fr"><%= @users.provider %></span></div>
+                        <div class="band group"><label>Gender</label><span id="uname" class="fr"><%= @users.gender %></span></div>
+                         <div class="band group"><label>Date of Birth</label><span id="uname" class="fr"><%= @users.birthday %></span></div>
+                    <div class="band group"><label>Nationality</label><span id="uname" class="fr"><%= @users.nationality %></span></div>
+
+                </form>
+             </div> <!-- xbox ends-->
+          
+             <div class="xbox">
+                 <p class="caption">De-activate</p>
+                 <a href="#" class="save">De-activate my Account</a>
+             </div><!--xbox ends-->
+        </div>
+    </div><!-- profile ends -->
+      <div id="popup_holder">
+
+    </div><!-- popup holder ends -->
+
+
+ 
+        <div class="pusher"></div>

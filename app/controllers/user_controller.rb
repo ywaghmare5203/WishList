@@ -16,7 +16,5 @@ class UserController < ApplicationController
     end
   end
 
-  def profile
-    puts"$$$$$$$$$$$$$$$$$$$$$$qqqqqqqqqqqqqqqqqqq$$$$$$$$$$$$$$$$$$#{params.inspect}"
-  end
+ 
 end

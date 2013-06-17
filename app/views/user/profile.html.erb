@@ -1,6 +1,7 @@
 
 
     <div class="content">
+     
     	<b class="back"><a href="todaysdeal.html" class="icons">back to todays deals</a></b>
      </div>
 
@@ -9,6 +10,7 @@
         	<h2>My Profile</h2>
             <div class="xbox" >
 
+               <%= @users.inspect %>
                 <p class="caption first">Personal Information</p>
                 <form>
                     <div class="band group"><label>Username</label><img src="/images/edit.jpg" class="u-name"><span id="uname" class="fr">anishmedia</span></div>
@@ -17,24 +19,7 @@
 
                 </form>
              </div> <!-- xbox ends-->
-             <div class="xbox" >
-             	 <p id="cusinemsg">You have to select <br> <span class="col2">3 Cuisines</span> or select <span class="col1"> veg</span></p>
-                 <p class="caption">Cusine Preferences</p>
-                 <ul class="group cusineselect">
-                    <li class="cuisine noveg">Italian</li>
-                    <li class="cuisine activated noveg">Indian</li>
-                    <li class="cuisine noveg">Oriental</li>
-                    <li class="cuisine veg">Veg</li>
-                    <li class="clear"></li>
-                    <li class="cuisine activated noveg">American</li>
-                    <li class="cuisine activated noveg">Worldwide</li>
-
-                     <li class="cuisine noveg">Arabic</li>
-                 </ul>
-                 <a href="#" class="save" id="savecuisines">Save Changes</a>
-
-                 <span class="err">Please select atleast 3 cuisines or veg</span>
-            </div><!-- xbox ends-->
+     
              <div class="xbox">
                  <p class="caption">De-activate</p>
                  <a href="#" class="save">De-activate my Account</a>
