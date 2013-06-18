@@ -17,7 +17,7 @@ class LoginController < ApplicationController
       end
     else
       flash.now.alert = "Invalid email or password"
-      render "new"
+      render "home/index"
     end
   end
 

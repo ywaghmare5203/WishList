@@ -16,5 +16,7 @@ class UserController < ApplicationController
     end
   end
 
- 
+ def change_password
+   puts"#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@#{params.inspect}"
+ end
 end
