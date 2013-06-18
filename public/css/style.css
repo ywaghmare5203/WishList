@@ -917,13 +917,36 @@ tfoot .lft-aln{text-align:left; padding-left:26px;}
 .negative{padding-left:5px;color:#F2433F}
 
 
-.adminsales{background:#fff; margin:10px; padding:10px; border:1px solid #999; min-height:400px;}
+.adminsales{background:#fff; margin:10px; padding:10px; border:1px solid #999; height:auto;}
 .adminsales .cap{padding:10px 0 20px 0}
 .adminsales .caps{padding:0}
 .adminsales select{width:220px;}
 #ad-restaurant{float:right;margin:20px 10px 0 0;}
 .adminsales .left_aln_rest{padding-top:15px;}
 
+
+.adminsales1{background:#fff; margin:10px; padding:10px; border:1px solid #999; height: 650px;}
+.adminsales1 .cap{padding:10px 0 20px 0}
+.adminsales1 .caps{padding:0}
+.adminsales1 select{width:220px;}
+#ad-restaurant{float:right;margin:20px 10px 0 0;}
+.adminsales1 .left_aln_rest{padding-top:15px;}
+
+
+.adminsales2{background:#fff; margin:10px; padding:10px; border:1px solid #999; height: 300px;}
+.adminsales2 .cap{padding:10px 0 20px 0}
+.adminsales2 .caps{padding:0}
+.adminsales2 select{width:220px;}
+#ad-restaurant{float:right;margin:20px 10px 0 0;}
+.adminsales2 .left_aln_rest{padding-top:15px;}
+
+
+.adminsales3{background:#fff; margin:10px; padding:10px; border:1px solid #999; height: 125px;}
+.adminsales3 .cap{padding:10px 0 20px 0}
+.adminsales3 .caps{padding:0}
+.adminsales3 select{width:220px;}
+#ad-restaurant{float:right;margin:20px 10px 0 0;}
+.adminsales3 .left_aln_rest{padding-top:15px;}
 /*copywrite*/
 .alert{position:absolute; right:0; top:0; width:48px; height:48px; cursor:pointer; background:url(../images/alert.png) no-repeat}
 .maps .alert{top:-58px; }
@@ -946,8 +969,30 @@ tfoot .lft-aln{text-align:left; padding-left:26px;}
  #wrapper .adminsales #add-deal-location  #txt_ar{width:218px;}
 .b-maps{margin-bottom:20px;}
 .eq{width:90px;}
+ #wrapper .tab-content li form input.check, #wrapper .adminsales1 #add-deal-location input.check{width:auto;}
+
+#wrapper .tab-content li form input.check_alt, #wrapper .adminsales1 #add-deal-location input.check_alt{width:20px;float:left;}
+
+ #wrapper .adminsales1 #add-deal-location  #txt_ar{width:218px;}
+
+  #wrapper .tab-content li form input.check, #wrapper .adminsales2 #add-deal-location input.check{width:auto;}
+
+#wrapper .tab-content li form input.check_alt, #wrapper .adminsales2 #add-deal-location input.check_alt{width:20px;float:left;}
+
+ #wrapper .adminsales2 #add-deal-location  #txt_ar{width:218px;}
+
+
+  #wrapper .tab-content li form input.check, #wrapper .adminsales3 #add-deal-location input.check{width:auto;}
+
+#wrapper .tab-content li form input.check_alt, #wrapper .adminsales3 #add-deal-location input.check_alt{width:20px;float:left;}
+
+ #wrapper .adminsales3 #add-deal-location  #txt_ar{width:218px;}
+
 input[type="file"]::-webkit-file-upload-button{
- 
+
+
+
+
    
     margin: 0 0 0 0px;
     border: 1px solid #aaaaaa;
