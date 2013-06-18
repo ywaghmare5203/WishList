@@ -1,15 +1,10 @@
-
-
     <div class="content">
     	<b class="back"><a href="" class="icons">back to todays deals</a></b>
      </div>
 <div class="content">
 <div class="business_form group" >
 <div class="adminsales1">
-
- 	<%#*<div class="profile">%>
-    	
-        	<h2>My Profile</h2>
+ 	     	<h2>My Profile</h2>
             <div class="xbox" >
               <%= form_for @edit_profile, :as =>:update, :url => update_user_path, :id => @edit_profile.id,:html => {:multipart => "true"} ,:method => "post"  do |f|%>
               <label>First Name</label>
@@ -42,18 +37,11 @@
               <div class="actions">
               <%= f.submit :Update  %>
               </div>
-
-
-
-
               <% end %>
             </div>
-
 </div>
-
        <div class="adminsales2">
-              
-<div class="xbox">
+  <div class="xbox">
                 <h2>Change Your Password</h2>
                  <%= form_for @user_password , :as => :password, :url => change_password_path, :id => @edit_profile.id,:method => "post" do |f|%>
                  <label>Enter Your Old Password</label>
@@ -72,7 +60,6 @@
 
                  <% end %>
              </div><!--xbox ends-->
-
        </div>
 <div class="adminsales3">
 
