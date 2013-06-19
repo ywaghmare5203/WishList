@@ -6,7 +6,7 @@ $('.quan').change(function(){
 	$('.owe',par).html($(this).val()*$('.per',par).html());
 });
 $('.earnpoints ul li a').bind('click',share);
-$('.file').click(function(){$('.browse').trigger('click');alert('hi');})
+$('.file').click(function(){$('.browse').trigger('click');})
 $('#specialurl').focus($(this).attr('value','http://www.iwannaeat.com/invite345'));
 $('.close').click(function(){$(this).parent().parent().hide();$('#popup_holder').hide();$('.forgotpasswordbox').hide();});	
 $('#wrapper input').focus(function(){$(this).addClass('focus');$(this).attr('value','');$(this).css('color','#333');});

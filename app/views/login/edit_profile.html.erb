@@ -1,5 +1,5 @@
     <div class="content">
-    	<b class="back"><a href="" class="icons">back to todays deals</a></b>
+    	<b class="back"><%=link_to "back to profile" ,:html => {:class => "icons"}%></b>
      </div>
 <div class="content">
 <div class="business_form group" >
@@ -65,8 +65,8 @@
 
                <div class="xbox">
                  <h2>De-activate</h2><br/>
-                   <%= form_for @deactivate , :as => :password, :url => deactivate_path, :id => @edit_profile.id,:method => "post" do |f|%>
-                  <%=  f.hidden_field :change, :value=>@edit_profile.id  , :name=> "change"%>
+                   <%= form_for @deactivate , :as => :user, :url => deactivate_user_path, :id => @edit_profile.id,:method => "post" do |f|%>
+                  <%=  f.hidden_field :change, :value=>@edit_profile.id  , :name=> "deactivate"%>
                  <div class="actions">
                  <%= f.submit "De-activate my Account" %>
                  </div>

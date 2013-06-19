@@ -7,6 +7,8 @@ match "/auth/:provider/callback" => "session#twitter"
 	match "/signout" => "session#signout", :as => :signout
   #match "/users/:user/products/send" => "products#send", :via => :post
 	get 'user/new' => 'user#new' ,:as => :sign_up
+  post 'user/de_activate_user_account' => 'user#de_activate_user_account' ,:as => :deactivate_user
+
   post 'user/create' => 'user#create' , :as => :sign_up_create
   match 'login/profile/:id' => 'login#profile', :as => :profile
   get 'login/edit_profile/:id' => 'login#edit_profile', :as => :edit_profile

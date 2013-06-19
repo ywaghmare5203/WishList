@@ -7,11 +7,14 @@ def set_locale
       I18n.locale = params[:locale] ||  I18n.default_locale
       if session[:user_id].present?
          @userlanguage = User.find_by_id(session[:user_id])
-       I18n.locale = params[:locale] || @userlanguage.locale ||  I18n.default_locale
+         if @userlanguage.present?
+           I18n.locale = params[:locale] || @userlanguage.locale ||  I18n.default_locale
          if params[:locale] and @userlanguage
             @userlanguage.locale=params[:locale]
             @userlanguage.save
          end
+         end
+       
       end
 end
 

@@ -28,4 +28,13 @@ def self.authenticate(email, password)
      nil
   end
 end
+
+   def self.authenticate_password(email, password)
+    user = User.where(:email => email).first
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
+   end
 end
