@@ -174,7 +174,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 });
 </script>
 
-  <div class="adminsales">
+<div class="content">
+
+    	<div class="business_form group" >
+<div class="adminsales4">
     <div id="add-deal-location" style="display: block">
       <span class="bus_back"><%= link_to 'Back', :controller => 'login', :action => 'welcome', :id => session[:user_id] %></span>
               <%= form_for(@product_edit, :as=>:product, :html => { :multipart => true, :id =>@product_edit.id},:method => 'post',:url => { :action => "update", :controller => "product" }) do |f| %>
@@ -239,4 +242,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <%end%>
       </div>
  </div>
+        </div>
+            
+          </div>
 

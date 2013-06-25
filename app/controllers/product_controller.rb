@@ -3,6 +3,7 @@ class ProductController < ApplicationController
   end
 
   def create
+    puts"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#{params.inspect}"
     @product_order = Product.last
     @user = User.find(params[:user_id])
     @products = Product.create

@@ -947,6 +947,15 @@ tfoot .lft-aln{text-align:left; padding-left:26px;}
 .adminsales3 select{width:220px;}
 #ad-restaurant{float:right;margin:20px 10px 0 0;}
 .adminsales3 .left_aln_rest{padding-top:15px;}
+
+
+.adminsales4{background:#fff; margin:10px; padding:10px; border:1px solid #999; height: 1100px;}
+.adminsales4 .cap{padding:10px 0 20px 0}
+.adminsales4 .caps{padding:0}
+.adminsales4 select{width:220px;}
+#ad-restaurant{float:right;margin:20px 10px 0 0;}
+.adminsales4 .left_aln_rest{padding-top:15px;}
+
 /*copywrite*/
 .alert{position:absolute; right:0; top:0; width:48px; height:48px; cursor:pointer; background:url(../images/alert.png) no-repeat}
 .maps .alert{top:-58px; }
@@ -987,6 +996,12 @@ tfoot .lft-aln{text-align:left; padding-left:26px;}
 #wrapper .tab-content li form input.check_alt, #wrapper .adminsales3 #add-deal-location input.check_alt{width:20px;float:left;}
 
  #wrapper .adminsales3 #add-deal-location  #txt_ar{width:218px;}
+
+ #wrapper .tab-content li form input.check, #wrapper .adminsales4 #add-deal-location input.check{width:auto;}
+
+#wrapper .tab-content li form input.check_alt, #wrapper .adminsales4 #add-deal-location input.check_alt{width:20px;float:left;}
+
+ #wrapper .adminsales4 #add-deal-location  #txt_ar{width:218px;}
 
 input[type="file"]::-webkit-file-upload-button{
 

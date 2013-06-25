@@ -62,7 +62,6 @@ if(Check){
 
 </script>
 
-
 <script>
   $(document).ready(function() {
   $("#button").bind("click", function() {
@@ -176,25 +175,6 @@ return false;
 }
 </script>
 
-<script>
-  $(document).ready(function() {
-  $("#button").bind("click", function() {
-    /* Generating unique id
-    */
-   var num     = $('.clonedInput').length;
-   var newNum  = new Number(num + 1);
-    var rand = Math.random().toString().split(".")[1];
-    var input = '<input type="file" name="image[]" class="image['+newNum+']" />'
-
-    $(this).before('<br/>' + input );
-  });
-
-  /* Pushing the first input to the DOM
-  */
-  $("#button").trigger("click");
-
-});
-</script>
 <div class="content">
 
     	<div class="business_form group" >

@@ -46,7 +46,7 @@ class LoginController < ApplicationController
 
     @wishlist_friend = User.where(:all, :conditions => { :id =>  :id != params[:id] })
       respond_to do |format|
-      	format.html {render :layout => "user"}
+      	format.html {render :layout => "application"}
         format.json { render :json => [@user, @friends] }
       end
   end
