@@ -20,17 +20,38 @@
   <div id="header">
     	<div class="group">
             	<a href=""> <h1 class="logo-sales logo_bus"></h1></a>
-            <div class="header_info">
-
-              <p class="login">
-<a id="login" class="icons" href="#">Login</a>
-</p>
+           <div class="header_info">
                 <!--<p class="activity friends"><a href="#" class="icons">Invite Friends</a></p>
                 <p class="activity mobapp"><a href="#" class="icons">Mobile App</a></p>-->
                 <!-- <span id="signup">Sign up</span>-->
-                <!--<p cls="login"><a href="#" class="icons" id="login">Login</a></p>-->
-                <div class="activity loggedinfo">
+                <!--<p class="login"><a href="#" class="icons" id="login">Login</a></p>-->
+<% if (session[:user_id]).present? %>
+                <div class="activity loggedinfo"><b><em>Logged in as </em> <%= getUserNamebyId(session[:user_id]) %>&nbsp;<%= getUserLastNamebyId(session[:user_id]) %></b><span class="caret"></span>
+                	<div class="loglist">
+                    	<div class="holder">
+                        <div class="arrowup"></div>
+                            <ul>
+
+                              <li> <td></td></li>
+                            <li> <%= link_to "Profile Information" , profile_path(session[:user_id])%></li>
+                             <li><%= link_to "Sign out", :signout %></li>
+
+                            </ul>
+                         </div>
+                     </div>
                 </div>
+                <form action="#" method="get" class="activity loggedinfo">
+<select name="locale" onchange="this.form.submit()">
+    <option>Select Language</option>
+    <option  value="en"  <%= (@user.locale=='en')?'selected="selected"':''%>>English</option>
+    <option  value="rs" <%= (@user.locale=='rs')?'selected="selected"':''%>>Russian</option>
+    <option  value="fn" <%= (@user.locale=='fn')?'selected="selected"':''%>>Finnish</option>
+    <option  value="sd" <%= (@user.locale=='sd')?'selected="selected"':''%>>Swedish</option>
+    <option  value="pl" <%= (@user.locale=='pl')?'selected="selected"':''%>>Polish</option>
+   </select>
+</form>
+                <% end %>
+
            </div>
         </div>
     </div><!-- header ends-->
